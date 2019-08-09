@@ -43,19 +43,20 @@ int main(int argc, char *argv[])
         addDisk(&tour1, i);
     }
 
-    curs_set(0);
     afficher(&tour1, &tour2, &tour3, nbDisk + 1);
-    debut = time(NULL);
     if (mode == 'm') {
+        debut = time(NULL);
         playerInteract(&tour1, &tour2, &tour3);
         noecho();
     }
 	else {
+        curs_set(0);
         int speed= 1;
         mvprintw(0,0, "nombre de deplacement par secondes : ");
         scanw("%d", &speed);
         noecho();
         refresh();
+        debut = time(NULL);
         autointeract(&tour1, &tour2, &tour3, nbDisk, &tour1, &tour2, &tour3, speed);
     }
     fin = time(NULL);
