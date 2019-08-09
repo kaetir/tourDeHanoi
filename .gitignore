@@ -1,0 +1,8 @@
+
+# clion exclude
+.idea/*
+.idea
+
+# debug and output files
+cmake-build-debug/
+linux/cmake-build-debug/
